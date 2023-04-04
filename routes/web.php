@@ -41,6 +41,12 @@ Route::get('/login', function(){
 //     return view('admin.test');
 // });
 
-Auth::routes();
+Auth::routes([
+    'regiter' => true
+]);
+
+Route::post('auth/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('/portfolios', \App\Http\Controllers\PortfolioController::class);

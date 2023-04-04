@@ -5,6 +5,8 @@
         <div class="card mb-3">
 
             <div class="card-body">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
 
                 <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
@@ -34,8 +36,12 @@
                             <label class="form-check-label" for="rememberMe">Remember me</label>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary w-100" type="submit">Login</button>
+                    <div class="row mb-0">
+                        <div class="col-md-8 offset-md-4">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('Login') }}
+                            </button>
+                        </div>
                     </div>
                     <div class="col-12">
                         <p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>

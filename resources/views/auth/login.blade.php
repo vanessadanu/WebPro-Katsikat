@@ -9,6 +9,17 @@
                     <p class="text-center small">Enter your username & password to login</p>
                 </div>
 
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        There's some error(s):
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                
                 {{-- <form class="row g-3 needs-validation" novalidate> --}}
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
@@ -70,9 +81,10 @@
                     </div>
 
                     <div class="col-12">
-                        <p class="small mb-0">Don't have account? <a href="{{ route('register') }}">Create an account</a></p>
+                        <p class="small mb-0">Don't have account? <a href="{{ route('register') }}">Create an account</a>
+                        </p>
                     </div>
-                
+
                 </form>
             </div>
         </div>

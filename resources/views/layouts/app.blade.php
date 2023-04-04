@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Pages / Contact - Niceassets/adminlte Bootstrap Template</title>
+    <title>Admin Page</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -255,13 +255,10 @@
                             <hr class="dropdown-divider">
                         </li>
 
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="logout" role="button"
-                            onclick="document.findElementById('form-logout').submit()">
-                            <i class="bi bi-box-arrow-in-right"></i>
-                                <span>Log Out</span>
-                            </a>
-                        </li>
+                        <form action="{{ route('logout') }}" method="POST">
+                            {{ csrf_field() }}
+                            <button type="submit">Logout</button>
+                        </form>
 
                     </ul><!-- End Profile Dropdown Items -->
                 </li><!-- End Profile Nav -->
@@ -314,10 +311,6 @@
                 </a>
             </li> --}}
         </ul>
-
-        <form id="form-logout" method="post" action="{{ route('logout') }}">
-            @csrf
-        </form>
 
     </aside><!-- End Sidebar-->
 
