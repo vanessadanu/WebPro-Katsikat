@@ -245,20 +245,21 @@
                             <hr class="dropdown-divider">
                         </li>
 
-                        <li>
+                        {{-- <li>
                             <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
                                 <i class="bi bi-question-circle"></i>
                                 <span>Need Help?</span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <i class="bi bi-box-arrow-right"></i>
-                                <span>Sign Out</span>
+                            <a class="dropdown-item d-flex align-items-center" href="logout" role="button"
+                            onclick="document.findElementById('form-logout').submit()">
+                            <i class="bi bi-box-arrow-in-right"></i>
+                                <span>Log Out</span>
                             </a>
                         </li>
 
@@ -270,20 +271,22 @@
 
     </header><!-- End Header -->
 
+    
+
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
 
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="{{route('admin.dash')}}">
+                <a class="nav-link " href="{{ route('admin.dash') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{route('admin.profile')}}">
+                <a class="nav-link collapsed" href="{{ route('admin.profile') }}">
                     <i class="bi bi-person"></i>
                     <span>Profile</span>
                 </a>
@@ -303,7 +306,18 @@
                 </a>
             </li><!-- End Login Page Nav -->
 
+            {{-- <li class="nav-item">
+                <a class="nav-link collapsed" href="logout" role="button"
+                    onclick="document.findElementById('form-logout').submit()">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Logout</span>
+                </a>
+            </li> --}}
         </ul>
+
+        <form id="form-logout" method="post" action="{{ route('logout') }}">
+            @csrf
+        </form>
 
     </aside><!-- End Sidebar-->
 
