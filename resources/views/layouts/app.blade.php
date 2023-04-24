@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/adminlte/img/favicon.png" rel="icon">
-    <link href="assets/adminlte/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ asset('assets/adminlte/img/favicon.png') }}" rel="icon">
+    <link href="{{ ('assets/adminlte/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -20,24 +20,16 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/adminlte/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/adminlte/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/adminlte/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/adminlte/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="assets/adminlte/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="assets/adminlte/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/adminlte/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="{{ asset('assets/adminlte/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/adminlte/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/adminlte/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/adminlte/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/adminlte/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/adminlte/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/adminlte/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/adminlte/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: Niceassets/adminlte
-  * Updated: Mar 09 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/nice-assets/adminlte-bootstrap-assets/adminlte-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <link href="{{ asset('assets/adminlte/css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -45,7 +37,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="admin" class="logo d-flex align-items-center">
+            <a href="home" class="logo d-flex align-items-center">
                 <strong>Vanessa</strong>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -244,20 +236,20 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-
-                        {{-- <li>
-                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                                <i class="bi bi-question-circle"></i>
-                                <span>Need Help?</span>
-                            </a>
-                        </li> --}}
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
+                        {{-- <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li> --}}
+
                         <form action="{{ route('logout') }}" method="POST">
                             {{ csrf_field() }}
-                            <button type="submit">Logout</button>
+                            <button type="submit">Log out</button>
                         </form>
 
                     </ul><!-- End Profile Dropdown Items -->
@@ -267,8 +259,6 @@
         </nav><!-- End Icons Navigation -->
 
     </header><!-- End Header -->
-
-    
 
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">

@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      */
@@ -24,7 +29,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return('portfolios.create');
+        return view('portfolios.create');
     }
 
     /**
@@ -38,13 +43,15 @@ class PortfolioController extends Controller
             'image_file' => 'required'
         ]);
 
-        $imagePath = $request->file('image_file')->store('uploads');
+        $imagePath = $request->file('image_file')->store('uploads', ['disk' => 'public']);
 
         $newPortfolio = new Portfolio();
         $newPortfolio->title = $request->title;
         $newPortfolio->description = $request->description;
-        $newPortfolio->image_file = $request->image_file;
+        $newPortfolio->image_file_url = '/storage/' . $imagePath;
         $newPortfolio->save();
+
+        return redirect()->route('portfolios.index');
     }
 
     /**
@@ -60,7 +67,9 @@ class PortfolioController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Portfolio::findOrFail($id);
+
+        return view('portfolios.edit', compact('data'));
     }
 
     /**
@@ -68,7 +77,18 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            // 'image_file' => 'required',
+        ]);
+
+        $portfolio = Portfolio::findOrFail($id);
+        $portfolio->title = $request->title;
+        $portfolio->description = $request->description;
+        $portfolio->save();
+
+        return redirect()->route('portfolios.index');
     }
 
     /**
@@ -76,6 +96,9 @@ class PortfolioController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $portfolio = Portfolio::findOrFail($id);
+        $portfolio->delete();
+
+        return redirect()->route('portfolios.index');
     }
 }

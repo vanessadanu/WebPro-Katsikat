@@ -50,3 +50,9 @@ Route::post('auth/logout', [App\Http\Controllers\Auth\LoginController::class, 'l
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/portfolios', \App\Http\Controllers\PortfolioController::class);
+
+// Route::group(['prefix' => 'portfolios'], function () {
+//     Route::get('/create', function () {
+//         return view('portfolios.create');
+//     });
+// });

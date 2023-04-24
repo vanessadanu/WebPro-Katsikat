@@ -12,28 +12,46 @@
                 </ol>
             </nav>
 
+            <a href="{{ route('portfolios.create') }}" type="button" class="btn btn-primary mb-3"><i
+                    class="bi bi-plus-circle"></i> Add new</a>
             <div class="card">
                 <div class="card-body">
                     <table class="table">
                         <thead>
-                            <th>No</th>
-                            <th>Image</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Action</th>
-                        </thead>
-                    </table>
-                    <tbody>
-                        @foreach ($data as $index => $item)
                             <tr>
-                                <td>{{ $index + 1 }}</td>
-                                <td>{{ $item->image_file_url }}</td>
-                                <td>{{ $item->title }}</td>
-                                <td>{{ $item->description }}</td>
-                                <td></td>
+                                <th>No</th>
+                                <th>Title</th>
+                                <th>Image</th>
+                                <th>Description</th>
+                                <th>Action</th>
                             </tr>
-                        @endforeach
-                    </tbody>
+                        </thead>
+                        <tbody>
+                            @foreach ($data as $index => $item)
+                                <tr>
+                                    <td>{{ $index + 1 }}</td>
+                                    <td>{{ $item->title }}</td>
+                                    <td><img src="{{ asset($item->image_file_url) }}" alt="" width="200"></td>
+                                    <td>{{ $item->description }}</td>
+                                    <td>
+                                        <a href="{{ route('portfolios.edit', $item->id) }}" class="btn btn-warning"><i
+                                                class="bi bi-pen"></i>
+                                            Edit</a>
+
+                                        <a class="btn btn-danger"
+                                            onclick="event.preventDefault(); document.getElementById('delete-portfolio-{{ $item->id }}').submit()"><i
+                                                class="bi bi-trash"></i> Delete</a>
+
+                                        <form id="delete-portfolio-{{ $item->id }}"
+                                            action="{{ route('portfolios.destroy', $item->id) }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

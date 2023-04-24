@@ -8,7 +8,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Create</li>
+                    <li class="breadcrumb-item active">Update</li>
                 </ol>
             </nav>
 
@@ -26,20 +26,22 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Add New Portfolio</h5>
+                        <h5 class="card-title">Edit Portfolio</h5>
 
                         <!-- Vertical Form -->
-                        <form class="row g-3" method="post" action="{{ route('portfolios.store') }}"
+                        <form class="row g-3" method="post" action="{{ route('portfolios.update', $data->id) }}"
                             enctype="multipart/form-data">
                             @csrf
+                            @method('put')
                             <div class="col-12">
                                 <label for="inputTitle" class="form-label">Title</label>
-                                <input type="text" class="form-control" name="title" placeholder="Enter title">
+                                <input type="text" class="form-control" name="title" placeholder="Enter title"
+                                    value="{{ $data->title }}">
                             </div>
                             <div class="col-12">
                                 <label for="inputDesc" class="form-label">Description</label>
-                                <input class="form-control"
-                                    name="description"placeholder="Add description to your portfolio">
+                                <input class="form-control" name="description"
+                                    placeholder="Add description to your portfolio" value="{{ $data->description }}">
                             </div>
                             <div class="col-12">
                                 <label for="inputNumber" class="form-label">Image</label>
