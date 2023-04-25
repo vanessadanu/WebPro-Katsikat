@@ -10,22 +10,22 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -47,12 +47,10 @@
 
       <div class="profile">
         <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Vanessa Danuwijaya</a></h1>
+        <h1 class="text-light"><a href="#">Vanessa Danuwijaya</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
           <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
           <a href="https://www.instagram.com/vanessadanu/" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
           <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
@@ -61,7 +59,7 @@
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          {{-- <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li> --}}
           <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
           <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
@@ -74,7 +72,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Vanessa Danuwijaya</h1>
-      <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
+      <p>I'm <span class="typed" data-typed-items="Student, Designer, Developer"></span></p>
     </div>
   </section><!-- End Hero -->
 
@@ -241,7 +239,7 @@
       </div>
     </section><!-- End Skills Section -->
 
-    <!-- ======= Resume Section ======= -->
+    {{-- <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
       <div class="container">
 
@@ -305,7 +303,7 @@
         </div>
 
       </div>
-    </section><!-- End Resume Section -->
+    </section><!-- End Resume Section --> --}}
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio section-bg">
@@ -469,7 +467,7 @@
       </div>
     </section><!-- End Services Section -->
 
-    <!-- ======= Testimonials Section ======= -->
+    {{-- <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
       <div class="container">
 
@@ -506,7 +504,6 @@
                 <h4>Designer</h4>
               </div>
             </div><!-- End testimonial item -->
-
             <div class="swiper-slide">
               <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
                 <p>
@@ -551,7 +548,7 @@
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section><!-- End Testimonials Section --> --}}
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
