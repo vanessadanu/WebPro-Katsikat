@@ -45,6 +45,9 @@ Auth::routes([
     'regiter' => true
 ]);
 
+
+Route::get('/', [\App\Http\Controllers\WebController::class, 'index']);
+
 Route::post('auth/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

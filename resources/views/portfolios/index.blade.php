@@ -31,16 +31,20 @@
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $item->title }}</td>
-                                    <td><img src="{{ asset($item->image_file_url) }}" alt="" width="200"></td>
+                                    <td><img src="{{ asset('$item->image_file_url') }}" alt="" width="250">
+                                        <p class="text-xs text-secondary mb-0" style="font-size: 9px">
+                                            {{ $item->image_file_url }}&nbsp;&nbsp;&nbsp;</p>
+                                    </td>
                                     <td>{{ $item->description }}</td>
                                     <td>
+                                        <a href="{{ route('portfolios.show', $item->id) }}" class="btn btn-primary"><i
+                                                class="bi bi-eye"></i></a>
                                         <a href="{{ route('portfolios.edit', $item->id) }}" class="btn btn-warning"><i
-                                                class="bi bi-pen"></i>
-                                            Edit</a>
+                                                class="bi bi-pen"></i></a>
 
                                         <a class="btn btn-danger"
-                                            onclick="event.preventDefault(); document.getElementById('delete-portfolio-{{ $item->id }}').submit()"><i
-                                                class="bi bi-trash"></i> Delete</a>
+                                            onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this item?')){ document.getElementById('delete-portfolio-{{ $item->id }}').submit() }"><i
+                                                class="bi bi-trash"></i> </a>
 
                                         <form id="delete-portfolio-{{ $item->id }}"
                                             action="{{ route('portfolios.destroy', $item->id) }}" method="post">

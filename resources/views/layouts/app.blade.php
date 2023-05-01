@@ -11,7 +11,7 @@
 
     <!-- Favicons -->
     <link href="{{ asset('assets/adminlte/img/favicon.png') }}" rel="icon">
-    <link href="{{ ('assets/adminlte/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('assets/adminlte/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -37,7 +37,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="home" class="logo d-flex align-items-center">
+            <a href="\portfolio/public/home/" class="logo d-flex align-items-center">
                 <strong>Vanessa</strong>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -152,7 +152,7 @@
 
                         <li class="message-item">
                             <a href="#">
-                                <img src="assets/adminlte/img/messages-1.jpg" alt="" class="rounded-circle">
+                                <img src="{{ asset('assets/adminlte/img/messages-1.jpg') }}" alt="" class="rounded-circle">
                                 <div>
                                     <h4>Maria Hudson</h4>
                                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -166,7 +166,7 @@
 
                         <li class="message-item">
                             <a href="#">
-                                <img src="assets/adminlte/img/messages-2.jpg" alt="" class="rounded-circle">
+                                <img src="{{ asset('assets/adminlte/img/messages-2.jpg') }}" alt="" class="rounded-circle">
                                 <div>
                                     <h4>Anna Nelson</h4>
                                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -180,7 +180,7 @@
 
                         <li class="message-item">
                             <a href="#">
-                                <img src="assets/adminlte/img/messages-3.jpg" alt="" class="rounded-circle">
+                                <img src="{{ asset('assets/adminlte/img/messages-3.jpg') }}" alt="" class="rounded-circle">
                                 <div>
                                     <h4>David Muldon</h4>
                                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -204,13 +204,13 @@
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                         data-bs-toggle="dropdown">
-                        <img src="assets/adminlte/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
-                    </a><!-- End Profile Iamge Icon -->
+                        <img src="{{ asset('assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Vanessa D.</span>
+                    </a><!-- End Profile Image Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
+                            <h6>Vanessa Danuwijaya</h6>
                             <span>Web Designer</span>
                         </li>
                         <li>
@@ -218,7 +218,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="admin/profile">
+                            <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.profile') }}">
                                 <i class="bi bi-person"></i>
                                 <span>My Profile</span>
                             </a>
@@ -240,17 +240,18 @@
                             <hr class="dropdown-divider">
                         </li>
 
-                        {{-- <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
+                        <li>
+                            <form class="dropdown-item d-flex align-items-center" method="POST" action="{{ route('logout') }}">
                                 <i class="bi bi-box-arrow-right"></i>
-                                <span>Sign Out</span>
-                            </a>
-                        </li> --}}
+                                {{ csrf_field() }}
+                                <button type="submit">Log out</button>
+                            </form>
+                        </li>
 
-                        <form action="{{ route('logout') }}" method="POST">
+                        {{-- <form action="{{ route('logout') }}" method="POST">
                             {{ csrf_field() }}
                             <button type="submit">Log out</button>
-                        </form>
+                        </form> --}}
 
                     </ul><!-- End Profile Dropdown Items -->
                 </li><!-- End Profile Nav -->
@@ -273,6 +274,13 @@
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('portfolios.index') }}">
+                    <i class="bi bi-collection"></i>
+                    <span>Portfolios</span>
+                </a>
+            </li><!-- End Portfolios Page Nav -->
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('admin.profile') }}">
                     <i class="bi bi-person"></i>
                     <span>Profile</span>
@@ -280,18 +288,11 @@
             </li><!-- End Profile Page Nav -->
 
             {{-- <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
-          <i class="bi bi-card-list"></i>
-          <span>Register</span>
-        </a>
-      </li><!-- End Register Page Nav --> --}}
-
-            <li class="nav-item">
                 <a class="nav-link collapsed" href="login">
                     <i class="bi bi-box-arrow-in-right"></i>
                     <span>Login</span>
                 </a>
-            </li><!-- End Login Page Nav -->
+            </li><!-- End Login Page Nav --> --}}
 
             {{-- <li class="nav-item">
                 <a class="nav-link collapsed" href="logout" role="button"

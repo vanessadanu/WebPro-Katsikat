@@ -18,6 +18,7 @@ class PortfolioController extends Controller
     public function index()
     {
         $data = Portfolio::all();
+        
         return view('portfolios.index', compact('data'));
         // return view('portfolios.index', [
         //     'dataList' => $data
@@ -40,15 +41,17 @@ class PortfolioController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image_file' => 'required'
+            'image_file' => 'required',
+            'image_file.*' => 'mimes:jpg,jpeg,png|max:2000'
         ]);
 
-        $imagePath = $request->file('image_file')->store('uploads', ['disk' => 'public']);
+        $filename = $request->file('image_file')->getClientOriginalName();
+        $imagePath = $request->file('image_file')->move(public_path('assets\images'), $filename);
 
         $newPortfolio = new Portfolio();
         $newPortfolio->title = $request->title;
         $newPortfolio->description = $request->description;
-        $newPortfolio->image_file_url = '/storage/' . $imagePath;
+        $newPortfolio->image_file_url = $imagePath;
         $newPortfolio->save();
 
         return redirect()->route('portfolios.index');
@@ -59,7 +62,8 @@ class PortfolioController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = Portfolio::find($id);
+        return view('portfolios.show', compact('data'));
     }
 
     /**
@@ -80,7 +84,6 @@ class PortfolioController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            // 'image_file' => 'required',
         ]);
 
         $portfolio = Portfolio::findOrFail($id);
