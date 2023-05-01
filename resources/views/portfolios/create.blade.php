@@ -42,8 +42,8 @@
                                     name="description"placeholder="Add description to your portfolio">
                             </div>
                             <div class="col-12">
-                                <label for="inputNumber" class="form-label">Image</label>
-                                <input class="form-control" type="file" name="image_file">
+                                <label for="inputImage" class="form-label">Image</label>
+                                <input class="form-control" type="file" name="image_file" id="_file">
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>

@@ -12,7 +12,7 @@
                 </ol>
             </nav>
 
-            <a href="{{ route('portfolios.create') }}" type="button" class="btn btn-primary mb-3"><i
+            <a href="{{ route('portfolios.create') }}" enctype="multipart/form-data" type="button" class="btn btn-primary mb-3"><i
                     class="bi bi-plus-circle"></i> Add new</a>
             <div class="card">
                 <div class="card-body">
@@ -31,9 +31,9 @@
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $item->title }}</td>
-                                    <td><img src="{{ asset('$item->image_file_url') }}" alt="" width="250">
+                                    <td><img src="{{ asset($item->image_file_url) }}" alt="" width="250">
                                         <p class="text-xs text-secondary mb-0" style="font-size: 9px">
-                                            {{ $item->image_file_url }}&nbsp;&nbsp;&nbsp;</p>
+                                            {{ $item->image_file_url }}</p>
                                     </td>
                                     <td>{{ $item->description }}</td>
                                     <td>
