@@ -29,7 +29,8 @@
                         <h5 class="card-title">View Portfolio</h5>
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="{{ asset('$data->image_file_url') }}" alt="" width="w-full" class="w-100 border-radius-lg shadow-sm">
+                                <img src="{{ asset($data->image_file_url) }}" alt="" width="w-full"
+                                    class="w-100 border-radius-lg shadow-sm">
                                 <p class="text-xs text-secondary mb-0" style="font-size: 9px">
                                     {{ $data->image_file_url }}&nbsp;&nbsp;&nbsp;</p>
                             </div>
@@ -37,8 +38,19 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $data->title }}</h5>
                                     <p class="card-text">{{ $data->description }}</p>
+                                    <a href="{{ route('portfolios.edit', $data->id) }}" class="btn btn-warning"><i
+                                            class="bi bi-pen"></i>Edit</a>
+                                    <a class="btn btn-danger"
+                                        onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this item?')){ document.getElementById('delete-portfolio-{{ $data->id }}').submit() }"><i
+                                            class="bi bi-trash"></i>Delete</a>
+                                    <form id="delete-portfolio-{{ $data->id }}"
+                                        action="{{ route('portfolios.destroy', $data->id) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                    </form>
+                                    <br>
                                     <a type="cancel" href="{{ route('portfolios.index') }}"
-                                    class="btn btn-primary">Back</a>
+                                        class="btn btn-primary">Back</a>
                                 </div>
                             </div>
                         </div>

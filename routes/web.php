@@ -24,7 +24,7 @@ Route::group(['prefix' => 'home'], function () {
     });
     Route::get('/dash', function () {
         return view('admin.dash');
-    })->name('admin.dash');
+    });
     Route::get('/profile', function () {
         return view('admin.profile');
     })->name('admin.profile');
@@ -53,6 +53,8 @@ Route::post('auth/logout', [App\Http\Controllers\Auth\LoginController::class, 'l
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/portfolios', \App\Http\Controllers\PortfolioController::class);
+
+Route::get('/dash', [\App\Http\Controllers\DashController::class, 'index'])->name('admin.dash');
 
 // Route::group(['prefix' => 'portfolios'], function () {
 //     Route::get('/create', function () {

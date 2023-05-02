@@ -12,7 +12,7 @@
                     <li class="breadcrumb-item active">Profile</li>
                 </ol>
             </nav>
-        </div><!-- End Page Title -->
+        </div>
 
         <section class="section profile">
             <div class="row">
@@ -39,7 +39,7 @@
 
                     <div class="card">
                         <div class="card-body pt-3">
-                            <!-- Bordered Tabs -->
+                            {{-- <!-- Bordered Tabs -->
                             <ul class="nav nav-tabs nav-tabs-bordered">
                                 <li class="nav-item">
                                     <button class="nav-link active" data-bs-toggle="tab"
@@ -50,9 +50,9 @@
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit
                                         Profile</button>
                                 </li>
-                            </ul>
+                            </ul> --}}
 
-                            <div class="tab-content pt-2">
+                            <div class="tab-content pt-1">
                                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
                                     <h5 class="card-title">About</h5>
                                     <p class="small fst-italic">Second year undergraduate student of Bina Nusantara

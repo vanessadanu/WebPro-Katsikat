@@ -38,12 +38,12 @@
                             </div>
                             <div class="col-12">
                                 <label for="inputDesc" class="form-label">Description</label>
-                                <input class="form-control"
+                                <input type="text" class="form-control"
                                     name="description"placeholder="Add description to your portfolio">
                             </div>
                             <div class="col-12">
                                 <label for="inputImage" class="form-label">Image</label>
-                                <input class="form-control" type="file" name="image_file" id="_file">
+                                <input class="form-control" type="file" name="image_file_url" id="image_file_url">
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>

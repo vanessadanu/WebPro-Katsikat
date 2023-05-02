@@ -41,19 +41,21 @@ class PortfolioController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image_file' => 'required',
-            'image_file.*' => 'mimes:jpg,jpeg,png|max:2000'
+            'image_file_url' => 'required',
+            'image_file_url.*' => 'mimes:jpg,jpeg,png|max:2000'
         ]);
 
-        $filename = $request->file('image_file')->getClientOriginalName();
-        $imagePath = $request->file('image_file')->move(public_path('assets\images'), $filename);
+        // $filename = $request->file('image_file')->getClientOriginalName();
+        // $imagePath = $request->file('image_file')->move(public_path('assets\images'), $filename);
+
+        $imagePath = $request->file('image_file_url')->store('uploads', ['disk' => 'public']);
 
         $newPortfolio = new Portfolio();
         $newPortfolio->title = $request->title;
         $newPortfolio->description = $request->description;
-        $newPortfolio->image_file_url = $imagePath;
+        $newPortfolio->image_file_url = '/storage/' . $imagePath;
         $newPortfolio->save();
-
+        
         return redirect()->route('portfolios.index');
     }
 

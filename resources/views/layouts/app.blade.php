@@ -263,9 +263,7 @@
 
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
-
         <ul class="sidebar-nav" id="sidebar-nav">
-
             <li class="nav-item">
                 <a class="nav-link " href="{{ route('admin.dash') }}">
                     <i class="bi bi-grid"></i>
