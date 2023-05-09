@@ -265,21 +265,21 @@
     <aside id="sidebar" class="sidebar">
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('admin.dash') }}">
+                <a class="nav-link @yield('dashboard nav')" href="{{ route('admin.dash') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('portfolios.index') }}">
+                <a class="nav-link @yield('portfolio nav')" href="{{ route('portfolios.index') }}">
                     <i class="bi bi-collection"></i>
                     <span>Portfolios</span>
                 </a>
             </li><!-- End Portfolios Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('admin.profile') }}">
+                <a class="nav-link @yield('profile nav')" href="{{ route('admin.profile') }}">
                     <i class="bi bi-person"></i>
                     <span>Profile</span>
                 </a>

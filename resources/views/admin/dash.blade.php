@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('dashboard nav', '')
+@section('portfolio nav', 'collapsed')
+@section('profile nav', 'collapsed')
 @section('content')
     <main id="main" class="main">
         <div class="pagetitle">
