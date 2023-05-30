@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PortfolioController extends Controller
 {
@@ -11,14 +13,14 @@ class PortfolioController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $data = Portfolio::all(); // select * from Portfolio
-        
+
         return view('portfolios.index', compact('data'));
         // return view('portfolios.index', [
         //     'dataList' => $data
@@ -30,7 +32,10 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return view('portfolios.create');
+        //return view('portfolios.create');
+        $categories = Category::all();
+
+        return view('portfolios.create', compact('categories'));
     }
 
     /**
@@ -41,8 +46,8 @@ class PortfolioController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image_file_url' => 'required',
-            'image_file_url.*' => 'mimes:jpg,jpeg,png|max:2000'
+            //'image_file_url' => 'required',
+            'image_file_url' => 'required|image|mimes:jpg,jpeg,png|max:2000',
         ]);
 
         // $filename = $request->file('image_file')->getClientOriginalName();
@@ -51,11 +56,17 @@ class PortfolioController extends Controller
         $imagePath = $request->file('image_file_url')->store('uploads', ['disk' => 'public']);
 
         $newPortfolio = new Portfolio();
+        $newPortfolio->category_id = $request->category;
         $newPortfolio->title = $request->title;
         $newPortfolio->description = $request->description;
         $newPortfolio->image_file_url = '/storage/' . $imagePath;
         $newPortfolio->save();
-        
+
+        session()->flash('flash_notification', [
+            'level' => 'success',
+            'message' => 'Portfolio successfully added.'
+        ]);
+
         return redirect()->route('portfolios.index');
     }
 
@@ -74,8 +85,12 @@ class PortfolioController extends Controller
     public function edit(string $id)
     {
         $data = Portfolio::findOrFail($id);
+        $categories = Category::all();
 
-        return view('portfolios.edit', compact('data'));
+        return view('portfolios.edit', compact(
+            'data',
+            'categories'
+        ));
     }
 
     /**
@@ -84,14 +99,31 @@ class PortfolioController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
+            'category' => 'required',
             'title' => 'required',
             'description' => 'required',
+            'image_file' => 'nullable|image',
         ]);
 
         $portfolio = Portfolio::findOrFail($id);
+        $portfolio->category_id = $request->category;
         $portfolio->title = $request->title;
         $portfolio->description = $request->description;
+
+        if ($request->hasFile('image_file')) {
+            // delete old image
+            File::delete($portfolio->image_file_url);
+
+            // and store new image
+            $imagePath = $request->file('image_file')->store('uploads', ['disk' => 'public']);
+            $portfolio->image_file_url = $imagePath;
+        }
         $portfolio->save();
+
+        session()->flash('flash_notification', [
+            'level' => 'success',
+            'message' => 'Portfolio updated successfully'
+        ]);
 
         return redirect()->route('portfolios.index');
     }
@@ -102,7 +134,14 @@ class PortfolioController extends Controller
     public function destroy(string $id)
     {
         $portfolio = Portfolio::findOrFail($id);
+
+        File::delete($portfolio->image_file_url);
         $portfolio->delete();
+
+        session()->flash('flash_notification', [
+            'level' => 'success',
+            'message' => 'Portfolio successfully deleted'
+        ]);
 
         return redirect()->route('portfolios.index');
     }
