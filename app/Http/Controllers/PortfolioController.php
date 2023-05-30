@@ -17,7 +17,7 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        $data = Portfolio::all();
+        $data = Portfolio::all(); // select * from Portfolio
         
         return view('portfolios.index', compact('data'));
         // return view('portfolios.index', [
