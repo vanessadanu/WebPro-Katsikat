@@ -30,6 +30,9 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/adminlte/css/style.css') }}" rel="stylesheet">
+
+    {{-- DataTables CSS --}}
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -152,7 +155,8 @@
 
                         <li class="message-item">
                             <a href="#">
-                                <img src="{{ asset('assets/adminlte/img/messages-1.jpg') }}" alt="" class="rounded-circle">
+                                <img src="{{ asset('assets/adminlte/img/messages-1.jpg') }}" alt=""
+                                    class="rounded-circle">
                                 <div>
                                     <h4>Maria Hudson</h4>
                                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -166,7 +170,8 @@
 
                         <li class="message-item">
                             <a href="#">
-                                <img src="{{ asset('assets/adminlte/img/messages-2.jpg') }}" alt="" class="rounded-circle">
+                                <img src="{{ asset('assets/adminlte/img/messages-2.jpg') }}" alt=""
+                                    class="rounded-circle">
                                 <div>
                                     <h4>Anna Nelson</h4>
                                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -180,7 +185,8 @@
 
                         <li class="message-item">
                             <a href="#">
-                                <img src="{{ asset('assets/adminlte/img/messages-3.jpg') }}" alt="" class="rounded-circle">
+                                <img src="{{ asset('assets/adminlte/img/messages-3.jpg') }}" alt=""
+                                    class="rounded-circle">
                                 <div>
                                     <h4>David Muldon</h4>
                                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -241,7 +247,8 @@
                         </li>
 
                         <li>
-                            <form class="dropdown-item d-flex align-items-center" method="POST" action="{{ route('logout') }}">
+                            <form class="dropdown-item d-flex align-items-center" method="POST"
+                                action="{{ route('logout') }}">
                                 <i class="bi bi-box-arrow-right"></i>
                                 {{ csrf_field() }}
                                 <button type="submit">Log out</button>
@@ -334,6 +341,13 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    {{-- DataTables JS --}}
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        let table = new DataTable('.datatables');
+    </script>
 </body>
 
 </html>

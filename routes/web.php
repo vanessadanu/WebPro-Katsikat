@@ -53,11 +53,21 @@ Route::post('auth/logout', [App\Http\Controllers\Auth\LoginController::class, 'l
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/portfolios', \App\Http\Controllers\PortfolioController::class);
+Route::resource('/categories', \App\Http\Controllers\CategoryController::class);
 
 Route::get('/dash', [\App\Http\Controllers\DashController::class, 'index'])->name('admin.dash');
 
-// Route::group(['prefix' => 'portfolios'], function () {
-//     Route::get('/create', function () {
-//         return view('portfolios.create');
-//     });
+// Auth::routes(['register' => false, 'confirm' => false]);
+
+// dari pak danang
+// Route::group(['middleware' => ['auth']], function () {
+//   Route::get('/home', [HomeController::class, 'index'])->name('home');
+//   Route::resource('/categories', CategoryController::class);
+//   Route::resource('/portfolios', PortfolioController::class);
 // });
+
+// Route::get('/test', function(){
+//     Mail::to("vanillipeace@gmail.com");
+// });
+
+Route::post('login', [ApiController::class, 'login']);
