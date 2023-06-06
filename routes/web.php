@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Mail\ExampleMail;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,8 +68,8 @@ Route::get('/dash', [\App\Http\Controllers\DashController::class, 'index'])->nam
 //   Route::resource('/portfolios', PortfolioController::class);
 // });
 
-// Route::get('/test', function(){
-//     Mail::to("vanillipeace@gmail.com");
-// });
+Route::get('/test/email', function() {
+    Mail::to("vanillipeace@gmail.com")->send(new ExampleMail());
+  });
 
 Route::post('login', [ApiController::class, 'login']);
