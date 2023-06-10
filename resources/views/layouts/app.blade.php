@@ -32,7 +32,7 @@
     <link href="{{ asset('assets/adminlte/css/style.css') }}" rel="stylesheet">
 
     {{-- DataTables CSS --}}
-    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    {{-- <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"> --}}
 </head>
 
 <body>
@@ -286,6 +286,13 @@
             </li><!-- End Portfolios Page Nav -->
 
             <li class="nav-item">
+                <a class="nav-link @yield('categories nav')" href="{{ route('categories.index') }}">
+                    <i class="bi bi-diamond"></i>
+                    <span>Categories</span>
+                </a>
+            </li><!-- End Categories Page Nav -->
+
+            <li class="nav-item">
                 <a class="nav-link @yield('profile nav')" href="{{ route('admin.profile') }}">
                     <i class="bi bi-person"></i>
                     <span>Profile</span>
@@ -330,23 +337,26 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/chart.js/chart.umd.js"></script>
-    <script src="assets/vendor/echarts/echarts.min.js"></script>
-    <script src="assets/vendor/quill/quill.min.js"></script>
-    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/adminlte/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/adminlte/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/adminlte/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/adminlte/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/adminlte/vendor/quill/quill.min.js"></script>
+    <script src="assets/adminlte/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/adminlte/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/adminlte/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/adminlte/js/main.js"></script>
 
     {{-- DataTables JS --}}
-    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    {{-- <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script> --}}
 
     <script>
-        let table = new DataTable('.datatables');
+        // let table = new DataTable('.datatables');
+         /**
+   * Initiate Datatables
+   */
     </script>
 </body>
 

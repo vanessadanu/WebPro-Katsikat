@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('dashboard nav', 'collapsed')
-@section('category nav', 'collapsed')
+@section('portfolio nav', 'collapsed')
+@section('categories nav', '')
 @section('profile nav', 'collapsed')
 @section('content')
     <main id="main" class="main">
@@ -20,7 +21,8 @@
                     class="bi bi-plus-circle"></i> Add new</a>
             <div class="card">
                 <div class="card-body">
-                    <table class="table datatables">
+                    <table class="table datatable">
+                        <h5 class="card-title">Portfolio's Categories</h5>
                         <thead>
                             <tr>
                                 <th>No</th>

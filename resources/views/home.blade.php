@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('dashboard nav', 'collapsed')
 @section('portfolio nav', 'collapsed')
+@section('categories nav', 'collapsed')
 @section('profile nav', 'collapsed')
 
 @section('content')
