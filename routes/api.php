@@ -34,5 +34,3 @@ Route::group(['middleware' => ['auth:api']], function () {
 
   Route::post('logout', [ApiController::class, 'logout']);
 });
-
-// Route::resource('portfolios', \App\Http\Controllers\ApiController::class);
