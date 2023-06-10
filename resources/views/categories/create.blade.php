@@ -30,6 +30,11 @@
                                 <label for="inputName" class="form-label">Name</label>
                                 <input type="text" class="form-control" name="name" placeholder="Enter category name">
                             </div>
+                            <div class="col-12">
+                                <label for="inputDesc" class="form-label">Description</label>
+                                <input type="text" class="form-control"
+                                    name="description"placeholder="Add description for your category">
+                            </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <button type="reset" class="btn btn-secondary">Reset</button>

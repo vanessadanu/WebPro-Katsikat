@@ -33,6 +33,11 @@
                                 <input type="text" class="form-control" name="name"
                                     value="{{ $category->name }}">
                             </div>
+                            <div class="col-12">
+                                <label for="inputDesc" class="form-label">Description</label>
+                                <input class="form-control" name="description"
+                                    placeholder="Add description to your portfolio" value="{{ $category->description }}">
+                            </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <button type="reset" class="btn btn-secondary">Reset</button>

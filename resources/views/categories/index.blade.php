@@ -27,6 +27,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Name</th>
+                                <th>Description</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -35,6 +36,7 @@
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $item->name }}</td>
+                                    <td>{{ $item->description }}</td>
                                     <td>
                                         <a href="{{ route('categories.edit', $item->id) }}" class="btn btn-warning"><i
                                                 class="bi bi-pen"></i> Edit</a>

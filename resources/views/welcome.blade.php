@@ -63,9 +63,10 @@
                     <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a>
                     </li>
                     {{-- <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li> --}}
+                    <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i>
+                            <span>Categories</span></a></li>
                     <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
                             <span>Portfolio</span></a></li>
-                    {{-- <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> --}}
                     <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i>
                             <span>Contact</span></a></li>
                 </ul>
@@ -139,6 +140,34 @@
             </div>
         </section><!-- End About Section -->
 
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Categories</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            @foreach ($categories as $index => $item)
+                                <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+                                    <div class="icon"><i class="bi bi-slack"></i></div>
+                                    <h3 class="title"><a>{{ $item->name }}</a></h3>
+                                    <p class="description">{{ $item->description }}</p>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Services Section -->
+
+
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio section-bg">
             <div class="container">
@@ -147,17 +176,6 @@
                     <h2>Portfolio</h2>
                 </div>
 
-                {{-- <div class="row" data-aos="fade-up">
-                    <div class="col-lg-12 d-flex justify-content-center">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
-                        </ul>
-                    </div>
-                </div> --}}
-
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
                     @foreach ($data as $item)
                         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
@@ -165,9 +183,8 @@
                                 <img src="{{ asset($item->image_file_url) }}" class="img-fluid" alt="">
                                 <div class="portfolio-links">
                                     <a href="{{ asset($item->image_file_url) }}" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i
-                                            class="bx bx-link"></i></a>
+                                        class="portfolio-lightbox"
+                                        title="{{ $item->description }}"><i>{{ $item->title }}</i></a>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +207,8 @@
                             <div class="address">
                                 <i class="bi bi-geo-alt"></i>
                                 <h4>Location:</h4>
-                                <p>Jl. Araya Mansion No.8 - 22, Genitri, Tirtomoyo, Kec. Pakis, Kabupaten Malang, Jawa Timur 65154</p>
+                                <p>Jl. Araya Mansion No.8 - 22, Genitri, Tirtomoyo, Kec. Pakis, Kabupaten Malang, Jawa
+                                    Timur 65154</p>
                             </div>
 
                             <div class="email">
@@ -206,9 +224,9 @@
                             </div>
 
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                                frameborder="0" style="border:0; width: 100%; height: 290px;"
-                                allowfullscreen></iframe>
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.5713888287664!2d112.67854457374847!3d-7.939751579078779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd62996bbca58e5%3A0x4234c14fe926b04d!2sBinus%20University%20Malang!5e0!3m2!1sen!2sid!4v1686413066641!5m2!1sen!2sid"
+                                frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen>
+                            </iframe>
                         </div>
 
                     </div>

@@ -31,11 +31,13 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|unique:categories,name'
+            'name' => 'required|string|unique:categories,name',
+            'description' => 'required',
         ]);
 
         Category::create([
             'name' => $request->name,
+            'description' => $request->description,
         ]);
 
         session()->flash('flash_notification', [
@@ -71,13 +73,15 @@ class CategoryController extends Controller
     {
 
         $request->validate([
-            'name' => 'required|string|unique:categories,name,' . $id
+            'name' => 'required|string|unique:categories,name,' . $id,
+            'description' => 'required',
         ]);
 
         $category = Category::findOrFail($id);
 
         $category->update([
             'name' => $request->name,
+            'description' => $request->description,
         ]);
 
         session()->flash('flash_notification', [
