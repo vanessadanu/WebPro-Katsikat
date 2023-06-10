@@ -353,10 +353,15 @@
     {{-- <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script> --}}
 
     <script>
+        function showDeleteConfirmation(formId) {
+            if (confirm('Are you sure you want to delete this item?')) {
+                document.getElementById(formId).submit();
+            }
+        }
         // let table = new DataTable('.datatables');
-         /**
-   * Initiate Datatables
-   */
+        /**
+         * Initiate Datatables
+         */
     </script>
 </body>
 

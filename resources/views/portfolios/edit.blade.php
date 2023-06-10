@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('dashboard nav', 'collapsed')
+@section('portfolio nav', '')
+@section('categories nav', 'collapsed')
+@section('profile nav', 'collapsed')
+
 @section('content')
     <main id="main" class="main">
 
@@ -13,16 +18,7 @@
             </nav>
 
             <div class="col-lg-12">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        There's some error(s):
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                @include('_modules.alert')
 
                 <div class="card">
                     <div class="card-body">
@@ -37,6 +33,17 @@
                                 <label for="inputTitle" class="form-label">Title</label>
                                 <input type="text" class="form-control" name="title" placeholder="Enter title"
                                     value="{{ $data->title }}">
+                            </div>
+                            <div class="col-12">
+                                <label for="inputCategory" class="form-label">Category</label>
+                                <select name="category" class="form-control">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}"
+                                            {{ $category->id == $data->category_id ? 'selected' : '' }}>
+                                            {{ $category->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="col-12">
                                 <label for="inputDesc" class="form-label">Description</label>

@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\WebController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\CategoryController;
 use App\Mail\ExampleMail;
 use Illuminate\Support\Facades\Mail;
 
@@ -16,9 +21,11 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [WebController::class, 'index']);
 
 Route::group(['prefix' => 'home'], function () {
     Route::get('/', function () {
@@ -39,10 +46,6 @@ Route::get('/login', function(){
     return view('admin.login');
 })->name('admin.login');
 
-// Route::get('/test', function () {
-//     return view('admin.test');
-// });
-
 Auth::routes([
     'regiter' => true
 ]);
@@ -59,17 +62,16 @@ Route::resource('/categories', \App\Http\Controllers\CategoryController::class);
 
 Route::get('/dash', [\App\Http\Controllers\DashController::class, 'index'])->name('admin.dash');
 
-// Auth::routes(['register' => false, 'confirm' => false]);
+// Auth::routes(['register' => true, 'confirm' => true]);
 
-// dari pak danang
 // Route::group(['middleware' => ['auth']], function () {
 //   Route::get('/home', [HomeController::class, 'index'])->name('home');
 //   Route::resource('/categories', CategoryController::class);
 //   Route::resource('/portfolios', PortfolioController::class);
 // });
 
-Route::get('/test/email', function() {
-    Mail::to("vanillipeace@gmail.com")->send(new ExampleMail());
-  });
+// Route::get('/test/email', function() {
+//     Mail::to("vanillipeace@gmail.com")->send(new ExampleMail());
+//   });
 
-Route::post('login', [ApiController::class, 'login']);
+// Route::post('login', [ApiController::class, 'login']);

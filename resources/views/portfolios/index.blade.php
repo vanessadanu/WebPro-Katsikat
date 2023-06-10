@@ -1,8 +1,10 @@
 @extends('layouts.app')
+
 @section('dashboard nav', 'collapsed')
 @section('portfolio nav', '')
 @section('categories nav', 'collapsed')
 @section('profile nav', 'collapsed')
+
 @section('content')
     <main id="main" class="main">
 
@@ -19,12 +21,13 @@
                     class="bi bi-plus-circle"></i> Add new</a>
             <div class="card">
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table datatable">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Title</th>
                                 <th>Image</th>
+                                <th>Category</th>
                                 <th>Description</th>
                                 <th>Action</th>
                             </tr>
@@ -38,6 +41,7 @@
                                         <p class="text-xs text-secondary mb-0" style="font-size: 9px">
                                             {{ $item->image_file_url }}</p>
                                     </td>
+                                    <td>{{ $item->category->name }}</td>
                                     <td>{{ $item->description }}</td>
                                     <td>
                                         <a href="{{ route('portfolios.show', $item->id) }}" class="btn btn-primary"><i
@@ -46,9 +50,8 @@
                                                 class="bi bi-pen"></i></a>
 
                                         <a class="btn btn-danger"
-                                            onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this item?')){ document.getElementById('delete-portfolio-{{ $item->id }}').submit() }"><i
-                                                class="bi bi-trash"></i> </a>
-
+                                                onclick="showDeleteConfirmation('delete-portfolio-{{ $item->id }}'); { document.getElementById('delete-portfolio-{{ $item->id }}').submit() }"><i
+                                                class="bi bi-trash"></i></a>
                                         <form id="delete-portfolio-{{ $item->id }}"
                                             action="{{ route('portfolios.destroy', $item->id) }}" method="post">
                                             @csrf

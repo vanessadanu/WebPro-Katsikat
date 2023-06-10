@@ -40,7 +40,7 @@ class CategoryController extends Controller
 
         session()->flash('flash_notification', [
             'level' => 'success',
-            'message' => 'Category added successfully'
+            'message' => 'Category successfully added'
         ]);
 
         return redirect()->route('categories.index');
@@ -51,7 +51,6 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        // kita tidak pakai untuk show data
         abort(404);
     }
 
@@ -83,7 +82,7 @@ class CategoryController extends Controller
 
         session()->flash('flash_notification', [
             'level' => 'success',
-            'message' => 'Category updated successfully'
+            'message' => 'Category successfully updated'
         ]);
 
         return redirect()->route('categories.index');
@@ -100,7 +99,7 @@ class CategoryController extends Controller
 
         session()->flash('flash_notification', [
             'level' => 'success',
-            'message' => 'Category deleted successfully'
+            'message' => 'Category successfully deleted'
         ]);
 
         return redirect()->route('categories.index');

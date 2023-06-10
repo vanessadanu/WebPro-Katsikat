@@ -32,7 +32,7 @@ class ApiController extends Controller
         if (!$token = auth()->guard('api')->attempt($credentials)) {
             return response()->json([
                 'success' => false,
-                'message' => 'Email atau Password Anda salah'
+                'message' => 'Email or Password is incorrect'
             ], 401);
         }
 
@@ -53,7 +53,7 @@ class ApiController extends Controller
             //return response JSON
             return response()->json([
                 'success' => true,
-                'message' => 'Logout Berhasil!',
+                'message' => 'Logout success!',
             ]);
         }
     }
@@ -65,7 +65,7 @@ class ApiController extends Controller
     {
         $data = Portfolio::all();
 
-        return response()->json($data);
+        return response($data);
     }
 
     /**
@@ -118,7 +118,7 @@ class ApiController extends Controller
         $portfolio->description = $request->description;
         $portfolio->save();
 
-        return response('update portfolio success');
+        return response('Update portfolio success');
     }
 
     /**
@@ -129,6 +129,6 @@ class ApiController extends Controller
         $portfolio = Portfolio::findOrFail($id);
         $portfolio->delete();
 
-        return response('delete portfolio success');
+        return response('Delete portfolio success');
     }
 }

@@ -1,4 +1,8 @@
 @extends('layouts.app')
+@section('dashboard nav', 'collapsed')
+@section('portfolio nav', 'collapsed')
+@section('categories nav', '')
+@section('profile nav', 'collapsed')
 
 @section('content')
     <main id="main" class="main">
@@ -12,18 +16,19 @@
             </nav>
 
             @include('_modules.alert')
+
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Add New Category</h5>
 
                         <!-- Vertical Form -->
-                        <form class="row g-3" method="post" action="{{ route('portfolios.store') }}"
+                        <form class="row g-3" method="post" action="{{ route('categories.store') }}"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="col-12">
-                                <label for="inputTitle" class="form-label">Title</label>
-                                <input type="text" class="form-control" name="title" placeholder="Enter category title">
+                                <label for="inputName" class="form-label">Name</label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter category name">
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>

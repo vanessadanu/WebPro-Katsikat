@@ -45,6 +45,7 @@ class PortfolioController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'category' => 'required',
             'description' => 'required',
             //'image_file_url' => 'required',
             'image_file_url' => 'required|image|mimes:jpg,jpeg,png|max:2000',
@@ -56,8 +57,8 @@ class PortfolioController extends Controller
         $imagePath = $request->file('image_file_url')->store('uploads', ['disk' => 'public']);
 
         $newPortfolio = new Portfolio();
-        $newPortfolio->category_id = $request->category;
         $newPortfolio->title = $request->title;
+        $newPortfolio->category_id = $request->category;
         $newPortfolio->description = $request->description;
         $newPortfolio->image_file_url = '/storage/' . $imagePath;
         $newPortfolio->save();
@@ -99,15 +100,15 @@ class PortfolioController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'category' => 'required',
             'title' => 'required',
+            'category' => 'required',
             'description' => 'required',
             'image_file' => 'nullable|image',
         ]);
 
         $portfolio = Portfolio::findOrFail($id);
-        $portfolio->category_id = $request->category;
         $portfolio->title = $request->title;
+        $portfolio->category_id = $request->category;
         $portfolio->description = $request->description;
 
         if ($request->hasFile('image_file')) {
@@ -118,6 +119,7 @@ class PortfolioController extends Controller
             $imagePath = $request->file('image_file')->store('uploads', ['disk' => 'public']);
             $portfolio->image_file_url = $imagePath;
         }
+        
         $portfolio->save();
 
         session()->flash('flash_notification', [
