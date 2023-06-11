@@ -47,7 +47,7 @@
         <div class="d-flex flex-column">
             <div class="profile">
                 <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-                <h1 class="text-light"><a href="#">Vanessa Danuwijaya</a></h1>
+                <h1 class="text-light"><a href="#">Katsikat</a></h1>
                 <div class="social-links mt-3 text-center">
                     <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
                     <a href="https://www.instagram.com/vanessadanu/" class="instagram"><i
