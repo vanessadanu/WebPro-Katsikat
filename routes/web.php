@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashController;
+use App\Http\Controllers\ProfileController;
 use App\Mail\ExampleMail;
 use Illuminate\Support\Facades\Mail;
 
@@ -65,15 +66,19 @@ Route::get('/dash', [\App\Http\Controllers\DashController::class, 'index'])->nam
 
 // Auth::routes(['register' => true, 'confirm' => true]);
 
+// Route::post('login', [ApiController::class, 'login']);
+// Route::post('logout',[AuthController::class, 'logout'])->middleware('auth');
+
 // Route::group(['middleware' => ['auth']], function () {
 //   Route::get('/home', [HomeController::class, 'index'])->name('home');
-//   Route::resource('/categories', CategoryController::class);
+//   Route::resource('/dash', DashController::class);
 //   Route::resource('/portfolios', PortfolioController::class);
-// //   Route::resource('/profile', DashController::class);
+//   Route::resource('/categories', CategoryController::class);
+//   Route::resource('/profile', ProfileController::class);
 // });
 
 // Route::get('/test/email', function() {
 //     Mail::to("vanillipeace@gmail.com")->send(new ExampleMail());
 //   });
 
-// Route::post('login', [ApiController::class, 'login']);
+
