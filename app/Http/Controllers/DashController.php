@@ -11,6 +11,6 @@ class DashController extends Controller
     {
         $data = Portfolio::all();
         
-        return view('admin.dash', compact('data'));
+        return view('dash.index', compact('data'));
     }
 }

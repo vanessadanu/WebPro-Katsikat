@@ -26,7 +26,9 @@ use App\Http\Controllers\ApiController;
 
 Route::post('login', [ApiController::class, 'login']);
 
-Route::group(['middleware' => ['auth:api']], function () {
+Route::group([
+  'middleware' => ['auth:api']
+], function () {
   Route::get('portfolios', [ApiController::class, 'index']);
   Route::post('portfolios', [ApiController::class, 'store']);
   Route::put('portfolios/{id}', [ApiController::class, 'update']);

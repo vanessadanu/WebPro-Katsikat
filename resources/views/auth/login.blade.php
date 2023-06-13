@@ -57,7 +57,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 mb-3">
+                    {{-- <div class="col-12 mb-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="remember" id="remember"
                                 {{ old('remember') ? 'checked' : '' }}>
@@ -66,7 +66,7 @@
                                 {{ __('Remember Me') }}
                             </label>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary w-100">

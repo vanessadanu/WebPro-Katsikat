@@ -11,7 +11,7 @@ class AuthController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login','register']]);
+        $this->middleware('auth:web', ['except' => ['login','register']]);
     }
 
     public function login(Request $request)
@@ -31,14 +31,16 @@ class AuthController extends Controller
         }
 
         $user = Auth::user();
-        return response()->json([
-                'status' => 'success',
-                'user' => $user,
-                'authorisation' => [
-                    'token' => $token,
-                    'type' => 'bearer',
-                ]
-            ]);
+
+        return redirect('/home');
+        // return response()->json([
+        //         'status' => 'success',
+        //         'user' => $user,
+        //         'authorisation' => [
+        //             'token' => $token,
+        //             'type' => 'bearer',
+        //         ]
+        //     ]);
 
     }
 
@@ -70,10 +72,12 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Successfully logged out',
-        ]);
+        // return response()->json([
+        //     'status' => 'success',
+        //     'message' => 'Successfully logged out',
+        // ]);
+
+        return redirect('/');
     }
 
     public function refresh()

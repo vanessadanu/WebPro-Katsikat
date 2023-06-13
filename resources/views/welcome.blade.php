@@ -174,24 +174,38 @@
 
                 <div class="section-title">
                     <h2>Portfolio</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
                 </div>
 
-                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-                    @foreach ($data as $item)
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div class="portfolio-wrap">
-                                <img src="{{ asset($item->image_file_url) }}" class="img-fluid" alt="">
-                                <div class="portfolio-links">
-                                    <a href="{{ asset($item->image_file_url) }}" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox"
-                                        title="{{ $item->description }}"><i>{{ $item->title }}</i></a>
-                                </div>
-                            </div>
-                        </div>
+        <div class="row" data-aos="fade-up">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="portfolio-flters">
+                    <li data-filter="*" class="filter-active">All</li>
+                    @foreach ($categories as $category)
+                        <li data-filter=".filter-{{ $category->id }}">{{ $category->name }}</li>
                     @endforeach
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+            @foreach ($data as $index => $item)
+                <div class="col-lg-4 col-md-6 portfolio-item filter-{{ $item->category_id }}">
+                    <div class="portfolio-wrap">
+                        <img src="{{ asset($item->image_file_url) }}" class="img-fluid" alt="">
+                        <div class="portfolio-links">
+                            <a href="{{ asset($item->image_file_url) }}" data-gallery="portfolioGallery"
+                                class="portfolio-lightbox" title="{{ $item->description }}">
+                                <i>{{ $item->title }}</i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-        </section><!-- End Portfolio Section -->
-
+            @endforeach
+        </div><!-- End Portfolio Section -->
+        
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact">
             <div class="container">

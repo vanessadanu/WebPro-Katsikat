@@ -224,7 +224,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.profile') }}">
+                            <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.index') }}">
                                 <i class="bi bi-person"></i>
                                 <span>My Profile</span>
                             </a>
@@ -272,7 +272,7 @@
     <aside id="sidebar" class="sidebar">
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a class="nav-link @yield('dashboard nav')" href="{{ route('admin.dash') }}">
+                <a class="nav-link @yield('dashboard nav')" href="{{ route('dash.index') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
@@ -293,7 +293,7 @@
             </li><!-- End Categories Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link @yield('profile nav')" href="{{ route('admin.profile') }}">
+                <a class="nav-link @yield('profile nav')" href="{{ route('profile.index') }}">
                     <i class="bi bi-person"></i>
                     <span>Profile</span>
                 </a>

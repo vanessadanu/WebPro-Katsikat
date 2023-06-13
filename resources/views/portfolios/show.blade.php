@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('dashboard nav', 'collapsed')
+@section('portfolio nav', 'collapsed')
+@section('categories nav', '')
+@section('profile nav', 'collapsed')
+
 @section('content')
     <main id="main" class="main">
 
@@ -41,8 +46,8 @@
                                     <a href="{{ route('portfolios.edit', $data->id) }}" class="btn btn-warning"><i
                                             class="bi bi-pen"></i>Edit</a>
                                     <a class="btn btn-danger"
-                                        onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this item?')){ document.getElementById('delete-portfolio-{{ $data->id }}').submit() }"><i
-                                            class="bi bi-trash"></i>Delete</a>
+                                    onclick="showDeleteConfirmation('delete-portfolio-{{$data->id }}'); { document.getElementById('delete-portfolio-{{ $data->id }}').submit() }"><i
+                                    class="bi bi-trash"></i>Delete</a>
                                     <form id="delete-portfolio-{{ $data->id }}"
                                         action="{{ route('portfolios.destroy', $data->id) }}" method="post">
                                         @csrf

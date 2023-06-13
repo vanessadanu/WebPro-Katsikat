@@ -30,12 +30,12 @@
                         <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
-                    <div class="col-12">
+                    {{-- <div class="col-12">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
                             <label class="form-check-label" for="rememberMe">Remember me</label>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row mb-0">
                         <div class="col-md-8 offset-md-4">
                             <button type="submit" class="btn btn-primary">

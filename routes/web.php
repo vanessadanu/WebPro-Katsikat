@@ -9,6 +9,7 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AuthController;
 use App\Mail\ExampleMail;
 use Illuminate\Support\Facades\Mail;
 
@@ -29,56 +30,57 @@ use Illuminate\Support\Facades\Mail;
 
 Route::get('/', [WebController::class, 'index']);
 
-Route::group(['prefix' => 'home'], function () {
-    Route::get('/', function () {
-        return view('admin.login');
-    });
-    Route::get('/dash', function () {
-        return view('admin.dash');
-    });
-    Route::get('/profile', function () {
-        return view('admin.profile');
-    })->name('admin.profile');
-    Route::get('/login', function(){
-        return view('admin.login');
-    })->name('admin.login');
-});
-
-Route::get('/login', function(){
-    return view('admin.login');
-})->name('admin.login');
-
-Auth::routes([
-    'regiter' => true
-]);
-
-
-Route::get('/', [\App\Http\Controllers\WebController::class, 'index']);
-
-Route::post('auth/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::resource('/portfolios', \App\Http\Controllers\PortfolioController::class);
-Route::resource('/categories', \App\Http\Controllers\CategoryController::class);
-
-Route::get('/dash', [\App\Http\Controllers\DashController::class, 'index'])->name('admin.dash');
-
-// Auth::routes(['register' => true, 'confirm' => true]);
-
-// Route::post('login', [ApiController::class, 'login']);
-// Route::post('logout',[AuthController::class, 'logout'])->middleware('auth');
-
-// Route::group(['middleware' => ['auth']], function () {
-//   Route::get('/home', [HomeController::class, 'index'])->name('home');
-//   Route::resource('/dash', DashController::class);
-//   Route::resource('/portfolios', PortfolioController::class);
-//   Route::resource('/categories', CategoryController::class);
-//   Route::resource('/profile', ProfileController::class);
+// Route::group(['prefix' => 'home'], function () {
+//     Route::get('/', function () {
+//         return view('admin.login');
+//     });
+//     Route::get('/dash', function () {
+//         return view('admin.dash');
+//     });
+//     Route::get('/profile', function () {
+//         return view('admin.profile');
+//     })->name('admin.profile');
+//     Route::get('/login', function(){
+//         return view('admin.login');
+//     })->name('admin.login');
 // });
 
-// Route::get('/test/email', function() {
-//     Mail::to("vanillipeace@gmail.com")->send(new ExampleMail());
-//   });
+// Route::get('/login', function(){
+//     return view('admin.login');
+// })->name('admin.login');
+
+// Auth::routes([
+//     'regiter' => true
+// ]);
+
+
+// Route::get('/', [\App\Http\Controllers\WebController::class, 'index']);
+
+// Route::post('auth/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::resource('/portfolios', \App\Http\Controllers\PortfolioController::class);
+// Route::resource('/categories', \App\Http\Controllers\CategoryController::class);
+
+// Route::get('/dash', [\App\Http\Controllers\DashController::class, 'index'])->name('admin.dash');
+
+Auth::routes(['register' => true, 'confirm' => true]);
+
+Route::post('login', [AuthController::class, 'login']);
+
+// Route::group(['middleware' => ['auth'], 'as' => 'admin.'], function () {
+Route::group(['middleware' => ['auth']], function () {
+  Route::post('logout',[AuthController::class, 'logout'])->name('logout');
+  Route::get('/home', [HomeController::class, 'index'])->name('home');
+  Route::resource('/dash', DashController::class);
+  Route::resource('/portfolios', PortfolioController::class);
+  Route::resource('/categories', CategoryController::class);
+  Route::resource('/profile', ProfileController::class);
+});
+
+Route::get('/test/email', function() {
+    Mail::to("vanillipeace@gmail.com")->send(new ExampleMail());
+  });
 
 
