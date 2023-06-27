@@ -6,7 +6,7 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
@@ -61,7 +61,7 @@ Route::get('/', [WebController::class, 'index']);
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route::resource('/portfolios', \App\Http\Controllers\PortfolioController::class);
-// Route::resource('/categories', \App\Http\Controllers\CategoryController::class);
+// Route::resource('/services', \App\Http\Controllers\ServiceController::class);
 
 // Route::get('/dash', [\App\Http\Controllers\DashController::class, 'index'])->name('admin.dash');
 
@@ -75,7 +75,7 @@ Route::group(['middleware' => ['auth']], function () {
   Route::get('/home', [HomeController::class, 'index'])->name('home');
   Route::resource('/dash', DashController::class);
   Route::resource('/portfolios', PortfolioController::class);
-  Route::resource('/categories', CategoryController::class);
+  Route::resource('/services', ServiceController::class);
   Route::resource('/profile', ProfileController::class);
 });
 

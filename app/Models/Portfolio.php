@@ -13,14 +13,14 @@ class Portfolio extends Model
     protected $table = 'portfolios';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'category_id',
+        'service_id',
         'title',
         'description',
         'image_file_url',
     ];
 
-    public function category(): BelongsTo
+    public function service(): BelongsTo
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Service::class);
     }
 }

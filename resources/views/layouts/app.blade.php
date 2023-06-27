@@ -286,11 +286,11 @@
             </li><!-- End Portfolios Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link @yield('categories nav')" href="{{ route('categories.index') }}">
+                <a class="nav-link @yield('services nav')" href="{{ route('services.index') }}">
                     <i class="bi bi-diamond"></i>
-                    <span>Categories</span>
+                    <span>Services</span>
                 </a>
-            </li><!-- End Categories Page Nav -->
+            </li><!-- End Services Page Nav -->
 
             <li class="nav-item">
                 <a class="nav-link @yield('profile nav')" href="{{ route('profile.index') }}">

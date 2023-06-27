@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
-use App\Models\Category;
+use App\Models\Service;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         $faker = Faker::create('id_US');
 
         for ($i=1; $i <= 10; $i++) { 
-            Category::create([
+            Service::create([
                 'name' => $faker->name,
                 // 'email' => $faker->email,
                 // 'password' => '',

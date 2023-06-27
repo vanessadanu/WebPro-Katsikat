@@ -2,7 +2,7 @@
 
 @section('dashboard nav', 'collapsed')
 @section('portfolio nav', '')
-@section('categories nav', 'collapsed')
+@section('services nav', 'collapsed')
 @section('profile nav', 'collapsed')
 
 @section('content')
@@ -27,7 +27,7 @@
                                 <th>No</th>
                                 <th>Title</th>
                                 <th>Image</th>
-                                <th>Category</th>
+                                <th>Service</th>
                                 <th>Description</th>
                                 <th>Action</th>
                             </tr>
@@ -41,7 +41,7 @@
                                         <p class="text-xs text-secondary mb-0" style="font-size: 9px">
                                             {{ $item->image_file_url }}</p>
                                     </td>
-                                    <td>{{ $item->category->name }}</td>
+                                    <td>{{ $item->service->name }}</td>
                                     <td>{{ $item->description }}</td>
                                     <td>
                                         <a href="{{ route('portfolios.show', $item->id) }}" class="btn btn-primary"><i

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AddPortfolioRequest;
 use App\Http\Requests\DeletePortfolioRequest;
 use App\Http\Requests\UpdatePortfolioRequest;
-use App\Models\Category;
+use App\Models\Service;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -86,7 +86,7 @@ class ApiController extends Controller
 
         $newPortfolio = new Portfolio();
         $newPortfolio->title = $request->title;
-        $newPortfolio->category_id = $request->category;
+        $newPortfolio->service_id = $request->service;
         $newPortfolio->description = $request->description;
         $newPortfolio->image_file_url = '/storage/' . $imagePath;
         $newPortfolio->save();
@@ -117,7 +117,7 @@ class ApiController extends Controller
     {
         $portfolio = Portfolio::findOrFail($id);
         $portfolio->title = $request->title;
-        $portfolio->category_id = $request->category;
+        $portfolio->service_id = $request->service;
         $portfolio->description = $request->description;
         $portfolio->save();
 

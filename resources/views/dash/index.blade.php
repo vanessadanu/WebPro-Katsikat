@@ -2,7 +2,7 @@
 
 @section('dashboard nav', '')
 @section('portfolio nav', 'collapsed')
-@section('categories nav', 'collapsed')
+@section('services nav', 'collapsed')
 @section('profile nav', 'collapsed')
 
 @section('content')
@@ -28,7 +28,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $item->title }}</h5>
                                         <p class="card-text">{{ $item->description }}</p>
-                                        <span class="badge bg-light text-dark">{{ $item->category->name }}</span>
+                                        <span class="badge bg-light text-dark">{{ $item->service->name }}</span>
                                     </div>
                                 </div>
                             </div>

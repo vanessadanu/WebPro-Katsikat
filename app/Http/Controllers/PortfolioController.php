@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Service;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -33,9 +33,9 @@ class PortfolioController extends Controller
     public function create()
     {
         //return view('portfolios.create');
-        $categories = Category::all();
+        $services = Service::all();
 
-        return view('portfolios.create', compact('categories'));
+        return view('portfolios.create', compact('services'));
     }
 
     /**
@@ -45,7 +45,7 @@ class PortfolioController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'category' => 'required',
+            'service' => 'required',
             'description' => 'required',
             //'image_file_url' => 'required',
             'image_file_url' => 'required|image|mimes:jpg,jpeg,png|max:2000',
@@ -58,7 +58,7 @@ class PortfolioController extends Controller
 
         $newPortfolio = new Portfolio();
         $newPortfolio->title = $request->title;
-        $newPortfolio->category_id = $request->category;
+        $newPortfolio->service_id = $request->service;
         $newPortfolio->description = $request->description;
         $newPortfolio->image_file_url = '/storage/' . $imagePath;
         $newPortfolio->save();
@@ -77,6 +77,7 @@ class PortfolioController extends Controller
     public function show(string $id)
     {
         $data = Portfolio::find($id);
+        
         return view('portfolios.show', compact('data'));
     }
 
@@ -86,11 +87,11 @@ class PortfolioController extends Controller
     public function edit(string $id)
     {
         $data = Portfolio::findOrFail($id);
-        $categories = Category::all();
+        $services = Service::all();
 
         return view('portfolios.edit', compact(
             'data',
-            'categories'
+            'services'
         ));
     }
 
@@ -101,14 +102,14 @@ class PortfolioController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'category' => 'required',
+            'service' => 'required',
             'description' => 'required',
             'image_file' => 'nullable|image',
         ]);
 
         $portfolio = Portfolio::findOrFail($id);
         $portfolio->title = $request->title;
-        $portfolio->category_id = $request->category;
+        $portfolio->service_id = $request->service;
         $portfolio->description = $request->description;
 
         if ($request->hasFile('image_file')) {

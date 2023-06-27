@@ -2,7 +2,7 @@
 
 @section('dashboard nav', 'collapsed')
 @section('portfolio nav', '')
-@section('categories nav', 'collapsed')
+@section('services nav', 'collapsed')
 @section('profile nav', 'collapsed')
 
 @section('content')
@@ -33,13 +33,13 @@
                                 <input type="text" class="form-control" name="title" placeholder="Enter title">
                             </div>
                             <div class="col-12">
-                                <label for="inputCategory" class="form-label">Category</label>
+                                <label for="inputService" class="form-label">Service</label>
                                 {{-- <input type="text" class="form-control" name="title" placeholder="Enter title"> --}}
-                                <select class="form-select" name="category">
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}"
-                                            {{ old('category') == $category->id ? 'selected' : '' }}>
-                                            {{ $category->name }}
+                                <select class="form-select" name="service">
+                                    @foreach ($services as $service)
+                                        <option value="{{ $service->id }}"
+                                            {{ old('service') == $service->id ? 'selected' : '' }}>
+                                            {{ $service->name }}
                                         </option>
                                     @endforeach
                                 </select>

@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
-use App\Models\Category;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
     public function index(Request $request){
         $data = Portfolio::all();
-        $categories = Category::all();
+        $services = Service::all();
 
         return view('welcome', compact(
             'data',
-            'categories',
+            'services',
         ));
     }
 
