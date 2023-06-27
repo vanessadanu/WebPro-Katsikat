@@ -32,7 +32,6 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //return view('portfolios.create');
         $services = Service::all();
 
         return view('portfolios.create', compact('services'));
@@ -47,7 +46,6 @@ class PortfolioController extends Controller
             'title' => 'required',
             'service' => 'required',
             'description' => 'required',
-            //'image_file_url' => 'required',
             'image_file_url' => 'required|image|mimes:jpg,jpeg,png|max:2000',
         ]);
 

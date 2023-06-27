@@ -61,9 +61,9 @@ class ServiceController extends Controller
      */
     public function edit(string $id)
     {
-        $Service = Service::findOrFail($id);
+        $service = Service::findOrFail($id);
 
-        return view('services.edit', compact('Service'));
+        return view('services.edit', compact('service'));
     }
 
     /**
@@ -77,9 +77,9 @@ class ServiceController extends Controller
             'description' => 'required',
         ]);
 
-        $Service = Service::findOrFail($id);
+        $service = Service::findOrFail($id);
 
-        $Service->update([
+        $service->update([
             'name' => $request->name,
             'description' => $request->description,
         ]);
@@ -97,9 +97,9 @@ class ServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        $Service = Service::findOrFail($id);
+        $service = Service::findOrFail($id);
 
-        $Service->delete();
+        $service->delete();
 
         session()->flash('flash_notification', [
             'level' => 'success',

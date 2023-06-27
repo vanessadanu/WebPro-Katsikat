@@ -22,7 +22,7 @@
             <div class="card">
                 <div class="card-body">
                     <table class="table">
-                        <h5 class="card-title">Portfolio's Services</h5>
+                        <h5 class="card-title">Katsikat's Services</h5>
                         <thead>
                             <tr>
                                 <th>No</th>
