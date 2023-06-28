@@ -35,6 +35,14 @@
                                 <input type="text" class="form-control"
                                     name="description"placeholder="Add description for your service">
                             </div>
+                            <div class="col-12">
+                                <label for="inputPrice" class="form-label">Price</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Rp</span>
+                                    <input type="text" class="form-control" name="price">
+                                    <span class="input-group-text">,00</span>
+                                </div>
+                            </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <button type="reset" class="btn btn-secondary">Reset</button>

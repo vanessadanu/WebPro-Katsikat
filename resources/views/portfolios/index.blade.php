@@ -41,7 +41,7 @@
                                         <p class="text-xs text-secondary mb-0" style="font-size: 9px">
                                             {{ $item->image_file_url }}</p>
                                     </td>
-                                    <td>{{ $item->service->name }}</td>
+                                    <td>{{ $item->service->name ?? 'N/A'}}</td>
                                     <td>{{ $item->description }}</td>
                                     <td>
                                         <a href="{{ route('portfolios.show', $item->id) }}" class="btn btn-primary"><i

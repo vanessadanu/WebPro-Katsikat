@@ -33,11 +33,13 @@ class ServiceController extends Controller
         $request->validate([
             'name' => 'required|string|unique:services,name',
             'description' => 'required',
+            'price' => 'required|integer',
         ]);
 
         Service::create([
             'name' => $request->name,
             'description' => $request->description,
+            'price' => $request->price,
         ]);
 
         session()->flash('flash_notification', [
@@ -75,6 +77,7 @@ class ServiceController extends Controller
         $request->validate([
             'name' => 'required|string|unique:services,name,' . $id,
             'description' => 'required',
+            'price' => 'required',
         ]);
 
         $service = Service::findOrFail($id);
@@ -82,6 +85,7 @@ class ServiceController extends Controller
         $service->update([
             'name' => $request->name,
             'description' => $request->description,
+            'price' => $request->price,
         ]);
 
         session()->flash('flash_notification', [

@@ -13,7 +13,8 @@ class Service extends Model
 
     protected $fillable = [
         'name',
-        'description'
+        'description',
+        'price',
     ];
 
     public function portfolios(): HasMany

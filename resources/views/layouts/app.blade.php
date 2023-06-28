@@ -41,7 +41,7 @@
 
         <div class="d-flex align-items-center justify-content-between">
             <a href="\portfolio/public/home/" class="logo d-flex align-items-center">
-                <strong>Vanessa</strong>
+                <strong>Katsikat</strong>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -210,8 +210,8 @@
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                         data-bs-toggle="dropdown">
-                        <img src="{{ asset('assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">Vanessa D.</span>
+                        <img src="{{ asset('assets/adminlte/img/profile-img.png') }}" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Katsikat.id</span>
                     </a><!-- End Profile Image Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">

@@ -13,8 +13,8 @@ class Portfolio extends Model
     protected $table = 'portfolios';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'service_id',
         'title',
+        'service_id',
         'description',
         'image_file_url',
     ];

@@ -52,7 +52,7 @@
                             </div>
                             <div class="col-12">
                                 <label for="inputNumber" class="form-label">Image</label>
-                                <input class="form-control" type="file" name="image_file">
+                                <input class="form-control" name="image_file" value="{{ $data->image_file_url }}" disabled="">
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>

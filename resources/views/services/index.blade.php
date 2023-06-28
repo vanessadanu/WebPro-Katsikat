@@ -28,6 +28,7 @@
                                 <th>No</th>
                                 <th>Name</th>
                                 <th>Description</th>
+                                <th>Price</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -37,6 +38,7 @@
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->description }}</td>
+                                    <td>{{ $item->price }}</td>
                                     <td>
                                         <a href="{{ route('services.edit', $item->id) }}" class="btn btn-warning"><i
                                                 class="bi bi-pen"></i> Edit</a>
