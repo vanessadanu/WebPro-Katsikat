@@ -3,6 +3,7 @@
 @section('dashboard nav', '')
 @section('portfolio nav', 'collapsed')
 @section('services nav', 'collapsed')
+@section('articles nav', 'collapsed')
 @section('profile nav', 'collapsed')
 
 @section('content')

@@ -46,27 +46,10 @@
             <ul>
                 <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
                 <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
-                {{-- <li><a class="nav-link scrollto" href="#resume">Resume</a></li> --}}
+                <li><a class="nav-link scrollto" href="#pricing">Artikel</a></li>
                 <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
                 <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-                {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-          <ul>
-            <li><a href="#">Drop Down 1</a></li>
-            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-              <ul>
-                <li><a href="#">Deep Drop Down 1</a></li>
-                <li><a href="#">Deep Drop Down 2</a></li>
-                <li><a href="#">Deep Drop Down 3</a></li>
-                <li><a href="#">Deep Drop Down 4</a></li>
-                <li><a href="#">Deep Drop Down 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Drop Down 2</a></li>
-            <li><a href="#">Drop Down 3</a></li>
-            <li><a href="#">Drop Down 4</a></li>
-          </ul>
-        </li> --}}
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -84,7 +67,7 @@
 
     <main id="main">
 
-        <!-- ======= About Me Section ======= -->
+        <!-- ======= About Us Section ======= -->
         <section id="about" class="about">
             <div class="container">
 
@@ -106,10 +89,8 @@
                                         <li><i class="bi bi-chevron-right"></i> <strong>Name:</strong>
                                             <span>Katsikat</span>
                                         </li>
-                                        <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+62
-                                                877-6224-5578</span></li>
-                                        <li><i class="bi bi-chevron-right"></i> <strong>Instagram:</strong>
-                                            <span>@katsikat.id</span>
+                                        <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong>
+                                            <span>Araya, SoeHat, dan Sawojajar</span>
                                         </li>
                                         <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Malang,
                                                 Jawa Timur</span></li>
@@ -117,17 +98,14 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <ul>
-                                        <li><i class="bi bi-chevron-right"></i> <strong>Address:</strong>
-                                            <span>Master</span>
-                                        </li>
                                         <li><i class="bi bi-chevron-right"></i> <strong>Operational Hours:</strong>
                                             <span>08:00-20.00</span>
                                         </li>
-                                        <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong>
-                                            <span>email@example.com</span>
+                                        <li><i class="bi bi-chevron-right"></i> <strong>Instagram:</strong>
+                                            <span>@katsikat.id</span>
                                         </li>
-                                        <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong>
-                                            <span>Available</span>
+                                        <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+62
+                                                877-6224-5578</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -136,46 +114,33 @@
                                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                                     <div class="count-box">
                                         <i class="bi bi-emoji-smile" style="color: #20b38e;"></i>
-                                        <span data-purecounter-start="0" data-purecounter-end="232"
+                                        <span data-purecounter-start="0" data-purecounter-end="300"
                                             data-purecounter-duration="1" class="purecounter"></span>
-                                        <p><strong>Happy Clients</strong> consequuntur voluptas nostrum aliquid ipsam
-                                            architecto ut.</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                                    <div class="count-box">
-                                        <i class="bi bi-journal-richtextr" style="color: #8a1ac2;"></i>
-                                        <span data-purecounter-start="0" data-purecounter-end="521"
-                                            data-purecounter-duration="1" class="purecounter"></span>
-                                        <p><strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium
-                                            et quia dere tan</p>
+                                        <p><strong>Customer yang puas</strong> dengan layanan dan sepatu bersih yang mereka dapatkan</p>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                                     <div class="count-box">
                                         <i class="bi bi-clock" style="color: #2cbdee;"></i>
-                                        <span data-purecounter-start="0" data-purecounter-end="18"
+                                        <span data-purecounter-start="0" data-purecounter-end="10"
                                             data-purecounter-duration="1" class="purecounter"></span>
-                                        <p><strong>Years of experience</strong> aut commodi quaerat modi aliquam nam
-                                            ducimus aut voluptate non vel</p>
+                                        <p><strong>bulan</strong> sejak Katsikat berdiri dengan dan dukungan customer, pekerja yang berpengalaman, serta Katsikat yang semakin berkembang</p>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                                     <div class="count-box">
-                                        <i class="bi bi-award" style="color: #ffb459;"></i>
-                                        <span data-purecounter-start="0" data-purecounter-end="16"
+                                        <i class="bi bi-pin-map" style="color: #a10e0e;"></i>
+                                        <span data-purecounter-start="0" data-purecounter-end="3"
                                             data-purecounter-duration="1" class="purecounter"></span>
-                                        <p><strong>Awards</strong> rerum asperiores dolor alias quo reprehenderit eum et
-                                            nemo pad der</p>
+                                        <p><strong>cabang</strong> lokasi Katsikat yang siap mengantar jemput sepatu Anda.</p>
                                     </div>
                                 </div>
                             </div>
                         </div><!-- End .content-->
 
-                        <div class="skills-content ps-lg-4">
+                        {{-- <div class="skills-content ps-lg-4">
                             <div class="progress">
                                 <span class="skill">HTML <i class="val">100%</i></span>
                                 <div class="progress-bar-wrap">
@@ -199,13 +164,47 @@
                                         aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
-                        </div>
-
+                        </div> --}}
                     </div>
                 </div>
 
             </div>
         </section><!-- End About Us Section -->
+
+        <!-- ======= Articles Section ======= -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+
+                <div class="section-title">
+                    <span>Artikel</span>
+                    <h2>Artikel</h2>
+                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                </div>
+
+                <div class="row">
+                    @foreach ($articles as $index => $item)
+                        <div class="col-lg-3 col-md-6">
+                            @if ($item && json_decode($item->image_file_url) && count(json_decode($item->image_file_url)) > 0)
+                                @php
+                                    $firstImageUrl = json_decode($item->image_file_url)[0];
+                                @endphp
+                                <div class="box">
+                                    <h3>{{ $item->title }}</h3>
+                                    <img src="{{ asset($firstImageUrl) }}" class="card-img-top" alt="">
+                                    <ul>
+                                        <li class="description">{{ Str::limit($item->description, 100) }}</li>
+                                    </ul>
+                                    <div class="btn-wrap">
+                                        <a href="{{ route('viewarticles', $item->id) }}" class="btn-buy">Lebih
+                                            lanjut<i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section><!-- End Articles Section -->
 
         <!-- ======= Our Services Section ======= -->
         <section id="services" class="services">
@@ -224,7 +223,8 @@
                                 <div class="icon"><i class="bi bi-slack"></i></div>
                                 <h4 class="title"><a>{{ $item->name }}</a></h4>
                                 <h4 style="color: #4154f1; font-weight: bold">
-                                    <sup>Rp</sup>{{ $item->price }}<span>,00</span></h4>
+                                    <sup>Rp</sup>{{ $item->price }}<span>,00</span>
+                                </h4>
                                 <p class="description">{{ $item->description }}</p>
                             </div>
                         </div>
@@ -242,81 +242,54 @@
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <img src="{{ asset('assets/img/testimonials/testimonials-1.jpg') }}"
+                                <img src="{{ asset('assets/img/testimonials/testimonials-1.png') }}"
                                     class="testimonial-img" alt="">
-                                <h3>Saul Goodman</h3>
-                                <h4>Ceo &amp; Founder</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                    rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                    risus at semper.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
+                                <h3>Experienced Technician</h3>
+                                <h4>Pekerja yang berpengalaman</h4>
+                                <p>Pekerja yang telah dibekali materi dan pengalaman dalam industri cuci sepatu.</p>
                             </div>
                         </div><!-- End testimonial item -->
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img"
+                                <img src="assets/img/testimonials/testimonials-2.png" class="testimonial-img"
                                     alt="">
-                                <h3>Sara Wilsson</h3>
-                                <h4>Designer</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-                                    cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-                                    legam anim culpa.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
+                                <h3>Affordable Service</h3>
+                                <h4>Harga Mahasiswa Banget!</h4>
+                                <p>Kami menyediakan layanan dengan harga yang aman bagi kantong dengan kualitas yang
+                                    terbaik, PLUS garansi jika sepatu Anda rusak atau kurang bersih.</p>
                             </div>
                         </div><!-- End testimonial item -->
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img"
+                                <img src="assets/img/testimonials/testimonials-3.png" class="testimonial-img"
                                     alt="">
-                                <h3>Jena Karlis</h3>
-                                <h4>Store Owner</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
-                                    veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
-                                    minim.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
+                                <h3>Free Pickup & Delivery</h3>
+                                <h4>Gratis Antar Jemput</h4>
+                                <p>Kami menyediakan gratis jasa antar dan jempur sepatu dengan jangkuan jarak 5km.</p>
                             </div>
                         </div><!-- End testimonial item -->
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img"
+                                <img src="assets/img/testimonials/testimonials-4.png" class="testimonial-img"
                                     alt="">
-                                <h3>Matt Brandon</h3>
-                                <h4>Freelancer</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
-                                    fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem
-                                    dolore labore illum veniam.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
+                                <h3>Good Customer Service</h3>
+                                <h4>Customer Service yang Baik</h4>
+                                <p>Punya pertanyaan seputar sepatu & Katsikat? Kami siap menjawab seluruh pertanyaan
+                                    Anda.</p>
                             </div>
                         </div><!-- End testimonial item -->
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img"
+                                <img src="assets/img/testimonials/testimonials-5.png" class="testimonial-img"
                                     alt="">
-                                <h3>John Larson</h3>
-                                <h4>Entrepreneur</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
-                                    veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
-                                    culpa fore nisi cillum quid.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
+                                <h3>Promo 10+1</h3>
+                                <h4>Dapatkan Promo 10+1</h4>
+                                <p>Kami menyediakan 1x cuci sepatu gratis bagi pelanggan yang telah mencuci 10x di
+                                    Katsikat.</p>
                             </div>
                         </div><!-- End testimonial item -->
 
@@ -369,46 +342,14 @@
             </div>
         </section><!-- End Our Portfolio Section -->
 
-        <!-- ======= Pricing Section ======= -->
-        <section id="pricing" class="pricing">
-            <div class="container">
-
-                <div class="section-title">
-                    <span>Artikel</span>
-                    <h2>Artikel</h2>
-                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
-                </div>
-
-                <div class="row">
-                    @foreach ($services as $index => $item)
-                        <div class="col-lg-3 col-md-6">
-                            <div class="box">
-                                <h3>{{ $item->name }}</h3>
-                                <img src="{{ asset('assets/img/testimonials/testimonials-1.jpg') }}"
-                                    class="card-img-top" alt="">
-                                {{-- <h4><sup>Rp</sup>{{ $item->price }}<span>,00</span></h4> --}}
-                                <ul>
-                                    <li class="description">{{ $item->description }}</li>
-                                </ul>
-                                <div class="btn-wrap">
-                                    <a href="#" class="btn-buy">Lebih lanjut<i class="bi bi-arrow-right"></i></a>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section><!-- End Pricing Section -->
-
         <!-- ======= Contact Us Section ======= -->
         <section id="contact" class="contact">
             <div class="container">
 
                 <div class="section-title">
-                    <span>Contact Us</span>
-                    <h2>Contact Us</h2>
-                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                    <span>Kontak Kami</span>
+                    <h2>Kontak Kami</h2>
+                    <p>Anda bisa bertanya, memberi saran, atau menghubungi kami melalui kontak berikut.</p>
                 </div>
 
                 <div class="row">
@@ -421,25 +362,24 @@
                                     <i class="bx bx-share-alt"></i>
                                     <h3>Social Profiles</h3>
                                     <div class="social-links">
-                                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                                        <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-                                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                                        <a href="https://www.instagram.com/katsikat.id/" class="instagram"><i
+                                                class="bi bi-instagram"></i></a>
+                                        <a href="https://wa.me/6287762245578" class="google-plus"><i
+                                                class="bi bi-whatsapp"></i></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="info-box mt-4">
                                     <i class="bx bx-envelope"></i>
-                                    <h3>Email Me</h3>
-                                    <p>contact@example.com</p>
+                                    <h3>DM kami</h3>
+                                    <p>@katsikat.id</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="info-box mt-4">
                                     <i class="bx bx-phone-call"></i>
-                                    <h3>Call Me</h3>
+                                    <h3>Chat/telepon kami</h3>
                                     <p>+62 877-6224-5578</p>
                                 </div>
                             </div>
@@ -471,7 +411,7 @@
                                 <div class="error-message"></div>
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
                             </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
+                            <div class="text-center"><button type="submit">Kirim pesan</button></div>
                         </form>
                     </div>
 
@@ -485,12 +425,9 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="container">
-            <h3>Laura Thomson</h3>
-            <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi
-                placeat.</p>
+            <h3>Katsikat.id</h3>
+            <p>#janjisayangsepatu</p>
             <div class="social-links">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
                 <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
                 <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>

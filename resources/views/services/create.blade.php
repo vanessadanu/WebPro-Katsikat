@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('dashboard nav', 'collapsed')
 @section('portfolio nav', 'collapsed')
 @section('services nav', '')
@@ -32,7 +33,7 @@
                             </div>
                             <div class="col-12">
                                 <label for="inputDesc" class="form-label">Description</label>
-                                <input type="text" class="form-control"
+                                <textarea type="text" class="form-control"
                                     name="description"placeholder="Add description for your service">
                             </div>
                             <div class="col-12">

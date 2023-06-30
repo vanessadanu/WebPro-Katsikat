@@ -293,6 +293,13 @@
             </li><!-- End Services Page Nav -->
 
             <li class="nav-item">
+                <a class="nav-link @yield('articles nav')" href="{{ route('articles.index') }}">
+                    <i class="bi bi-book"></i>
+                    <span>Articles</span>
+                </a>
+            </li><!-- End Services Page Nav -->
+
+            <li class="nav-item">
                 <a class="nav-link @yield('profile nav')" href="{{ route('profile.index') }}">
                     <i class="bi bi-person"></i>
                     <span>Profile</span>

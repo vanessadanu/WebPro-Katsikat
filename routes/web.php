@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Article;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\WebController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
@@ -29,6 +31,19 @@ use Illuminate\Support\Facades\Mail;
 // });
 
 Route::get('/', [WebController::class, 'index']);
+
+Route::get('/viewarticles/{id}', [WebController::class, 'articles'])->name('viewarticles');
+
+// Route::get('/viewarticles/{itemId}', function ($itemId) {
+//   $articles = Article::find($itemId);
+
+//   if ($articles) {
+//       return view('articles', compact('articles'));
+//   } else {
+//       // Handle case when the selected item is not found
+//       // Redirect or display an error message
+//   }
+// })->name('viewarticles');
 
 // Route::group(['prefix' => 'home'], function () {
 //     Route::get('/', function () {
@@ -76,6 +91,7 @@ Route::group(['middleware' => ['auth']], function () {
   Route::resource('/dash', DashController::class);
   Route::resource('/portfolios', PortfolioController::class);
   Route::resource('/services', ServiceController::class);
+  Route::resource('/articles', ArticleController::class);
   Route::resource('/profile', ProfileController::class);
 });
 
