@@ -34,5 +34,12 @@ Route::group([
   Route::put('portfolios/{id}', [ApiController::class, 'update']);
   Route::delete('portfolios/{id}', [ApiController::class, 'destroy']);
 
+  // New routes for services
+  Route::get('services', [ApiController::class, 'serviceIndex']);
+  Route::post('services', [ApiController::class, 'serviceStore']);
+  Route::put('services/{id}', [ApiController::class, 'serviceUpdate']);
+  Route::delete('services/{id}', [ApiController::class, 'serviceDestroy']);
+
+
   Route::post('logout', [ApiController::class, 'logout']);
 });

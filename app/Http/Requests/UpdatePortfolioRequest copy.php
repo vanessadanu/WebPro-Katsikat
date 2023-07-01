@@ -23,6 +23,7 @@ class UpdatePortfolioRequest extends FormRequest
     {
         return [
             'title' => 'required',
+            'service_id' => 'required',
             'description' => 'required',
             // 'image_file_url' => 'required',
     ];

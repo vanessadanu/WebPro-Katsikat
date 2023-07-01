@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddPortfolioRequest extends FormRequest
+class UpdateServiceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,10 +22,10 @@ class AddPortfolioRequest extends FormRequest
     public function rules(): array
     {
         return [
-                'title' => 'required',
-                'service_id'=>'required',
-                'description' => 'required',
-                // 'image_file_url' => 'required',
-        ];
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            // 'image_file_url' => 'required',
+    ];
     }
 }

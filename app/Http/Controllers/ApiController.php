@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AddPortfolioRequest;
 use App\Http\Requests\DeletePortfolioRequest;
 use App\Http\Requests\UpdatePortfolioRequest;
+use App\Http\Requests\AddServiceRequest;
+use App\Http\Requests\DeleteServiceRequest;
+use App\Http\Requests\UpdateServiceRequest;
 use App\Models\Service;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
@@ -69,6 +72,12 @@ class ApiController extends Controller
         return response($data);
     }
 
+    public function serviceIndex()
+    {
+        $services = Service::all();
+
+        return response($services);
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -92,6 +101,17 @@ class ApiController extends Controller
         $newPortfolio->save();
 
         return response('Add portfolio success');
+    }
+
+    public function serviceStore(AddServiceRequest $request)
+    {
+        $newService = new Service();
+        $newService->name = $request->name;
+        $newService->description = $request->description;
+        $newService->price = $request->price;
+        $newService->save();
+
+        return response('Add service success');
     }
 
     /**
@@ -124,6 +144,17 @@ class ApiController extends Controller
         return response('Update portfolio success');
     }
 
+    public function serviceUpdate(UpdateServiceRequest $request, string $id)
+    {
+        $service = Service::findOrFail($id);
+        $service->name = $request->title;
+        $service->description = $request->description;
+        $service->price = $request->price;
+        $service->save();
+
+        return response('Update service success');
+    }
+
     /**
      * Remove the specified resource from storage.
      */
@@ -133,5 +164,13 @@ class ApiController extends Controller
         $portfolio->delete();
 
         return response('Delete portfolio success');
+    }
+
+    public function serviceDestroy(DeleteServiceRequest $request, string $id)
+    {
+        $service = Service::findOrFail($id);
+        $service->delete();
+
+        return response('Delete service success');
     }
 }

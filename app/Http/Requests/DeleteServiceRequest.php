@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddPortfolioRequest extends FormRequest
+class DeleteServiceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,7 @@ class AddPortfolioRequest extends FormRequest
     public function rules(): array
     {
         return [
-                'title' => 'required',
-                'service_id'=>'required',
-                'description' => 'required',
-                // 'image_file_url' => 'required',
+            //
         ];
     }
 }
