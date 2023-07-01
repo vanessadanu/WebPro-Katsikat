@@ -137,7 +137,7 @@ class ApiController extends Controller
     {
         $portfolio = Portfolio::findOrFail($id);
         $portfolio->title = $request->title;
-        $portfolio->service_id = $request->service;
+        $portfolio->service_id = $request->service_id;
         $portfolio->description = $request->description;
         $portfolio->save();
 
@@ -147,7 +147,7 @@ class ApiController extends Controller
     public function serviceUpdate(UpdateServiceRequest $request, string $id)
     {
         $service = Service::findOrFail($id);
-        $service->name = $request->title;
+        $service->name = $request->name;
         $service->description = $request->description;
         $service->price = $request->price;
         $service->save();
