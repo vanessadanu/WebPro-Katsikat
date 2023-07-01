@@ -74,7 +74,7 @@
                 <div class="section-title">
                     <span>Tentang Kami</span>
                     <h2>Tentang Kami</h2>
-                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                    <p>Jasa perawatan premium sepatu yang pertama di Malang, dan jasa perawatan premium sepatu pertama di Indonesia yang berbasis media sosial.</p>
                 </div>
 
                 <div class="row">
@@ -305,9 +305,9 @@
             <div class="container">
 
                 <div class="section-title">
-                    <span>Our Portfolio</span>
-                    <h2>Our Portfolio</h2>
-                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                    <span>Portfolio</span>
+                    <h2>Portfolio</h2>
+                    <p>Lihatlah beberapa portofolio/testimoni dari beberapa kustomer terbaik kami.</p>
                 </div>
 
                 <div class="row" data-aos="fade-up">
@@ -338,7 +338,6 @@
                         </div>
                     @endforeach
                 </div>
-
             </div>
         </section><!-- End Our Portfolio Section -->
 
