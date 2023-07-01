@@ -27,14 +27,13 @@
                     <div class="card">
                         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                            <img src="{{ asset('assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
-                            <h2>Vanessa Danuwijaya</h2>
-                            <h3>Computer Science Student</h3>
+                            <img src="{{ asset('assets/adminlte/img/profile-img.png') }}" alt="Profile" class="rounded-circle">
+                            <h2>Katsikat.id</h2>
+                            <h3>Jasa Cuci Sepatu</h3>
                             <div class="social-links mt-2">
-                                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
                                 <a href="https://www.instagram.com/vanessadanu/" class="instagram"><i
                                         class="bi bi-instagram"></i></a>
-                                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://wa.me/6287762245578" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
                             </div>
                         </div>
                     </div>
@@ -61,24 +60,18 @@
                             <div class="tab-content pt-1">
                                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
                                     <h5 class="card-title">About</h5>
-                                    <p class="small fst-italic">Second year undergraduate student of Bina Nusantara
-                                        University. School of Computer Science BINUS @Malang.</p>
+                                    <p class="small fst-italic">Jasa perawatan premium sepatu yang pertama di Malang, dan jasa perawatan premium sepatu pertama di Indonesia yang berbasis media sosial. Berdiri di Malang, Katsikat.id mulai memberikan perawatan sepatu sejak 12 Oktober 2021.</p>
 
                                     <h5 class="card-title">Profile Details</h5>
 
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                                        <div class="col-lg-9 col-md-8">Vanessa</div>
+                                        <div class="col-lg-3 col-md-4 label ">Name</div>
+                                        <div class="col-lg-9 col-md-8">Katsikat.id</div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Institution</div>
-                                        <div class="col-lg-9 col-md-8">Bina Nusantara University</div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Semester</div>
-                                        <div class="col-lg-9 col-md-8">4th Semester</div>
+                                        <div class="col-lg-3 col-md-4 label">Location</div>
+                                        <div class="col-lg-9 col-md-8">Araya, SoeHat, and Sawojajar</div>
                                     </div>
 
                                     <div class="row">
@@ -87,14 +80,32 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Phone</div>
-                                        <div class="col-lg-9 col-md-8">(+62) 815 7841 4040</div>
+                                        <div class="col-lg-3 col-md-4 label">Operational Hours</div>
+                                        <div class="col-lg-9 col-md-8">08.00-20.00</div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Email</div>
-                                        <div class="col-lg-9 col-md-8">vanessa.danuwijaya@binus.ac.id</div>
+                                        <div class="col-lg-3 col-md-4 label">Phone</div>
+                                        <div class="col-lg-9 col-md-8">+62 877-6224-5578</div>
                                     </div>
+
+                                    <h5 class="card-title">Anggota Kelompok</h5>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label ">2501966143</div>
+                                        <div class="col-lg-9 col-md-8">Vanessa Danuwijaya</div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">2501974933</div>
+                                        <div class="col-lg-9 col-md-8">Hana Dyah Ayu Pertiwi</div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">2501971603</div>
+                                        <div class="col-lg-9 col-md-8">Gracio Elika Enold Tirtahardja</div>
+                                    </div>
+
 
                                 </div>
 
@@ -106,7 +117,7 @@
                                             <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
                                                 Image</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <img src="{{ asset('assets/img/profile-img.jpg') }}" alt="Profile">
+                                                <img src="{{ asset('assets/adminlte/img/profile-img.png') }}" alt="Profile">
                                                 <div class="pt-2">
                                                     <a href="#" class="btn btn-primary btn-sm"
                                                         title="Upload new profile image"><i class="bi bi-upload"></i></a>
@@ -174,29 +185,20 @@
                                         </div>
 
                                         <div class="row mb-3">
-                                            <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook
-                                                Profile</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="facebook" type="text" class="form-control"
-                                                    id="Facebook" value="https://facebook.com/#">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
                                             <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram
                                                 Profile</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="instagram" type="text" class="form-control"
-                                                    id="Instagram" value="https://instagram.com/#">
+                                                    id="Instagram" value="https://instagram.com/katsikat.id">
                                             </div>
                                         </div>
 
                                         <div class="row mb-3">
-                                            <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin
+                                            <label for="WhatsApp" class="col-md-4 col-lg-3 col-form-label">Linkedin
                                                 Profile</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="linkedin" type="text" class="form-control"
-                                                    id="Linkedin" value="https://linkedin.com/#">
+                                                <input name="whatsapp" type="text" class="form-control"
+                                                    id="Whatsapp" value="https://linkedin.com/#">
                                             </div>
                                         </div>
 

@@ -178,7 +178,7 @@
                 <div class="section-title">
                     <span>Artikel</span>
                     <h2>Artikel</h2>
-                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                    <p>Baca artikel #seputarsepatu kami untuk menambah wawasan Anda tentang sepatu.</p>
                 </div>
 
                 <div class="row">
