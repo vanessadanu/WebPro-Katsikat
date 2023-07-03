@@ -3,6 +3,7 @@
 @section('dashboard nav', 'collapsed')
 @section('portfolio nav', 'collapsed')
 @section('services nav', '')
+@section('articles nav', 'collapsed')
 @section('profile nav', 'collapsed')
 
 @section('content')
@@ -34,7 +35,7 @@
                             <div class="col-12">
                                 <label for="inputDesc" class="form-label">Description</label>
                                 <textarea type="text" class="form-control"
-                                    name="description"placeholder="Add description for your service">
+                                    name="description"placeholder="Add description for your service"></textarea>
                             </div>
                             <div class="col-12">
                                 <label for="inputPrice" class="form-label">Price</label>
