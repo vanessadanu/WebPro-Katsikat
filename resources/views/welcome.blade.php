@@ -332,8 +332,8 @@
                                 <a href="{{ asset($item->image_file_url) }}" data-gallery="portfolioGallery"
                                     class="portfolio-lightbox preview-link" title="{{ $item->title }}"><i
                                         class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                {{-- <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                        class="bx bx-link"></i></a> --}}
                             </div>
                         </div>
                     @endforeach
